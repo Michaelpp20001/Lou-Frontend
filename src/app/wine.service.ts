@@ -16,7 +16,7 @@ export class WineService {
     public _tab: TabService
     ) { }
 
-  baseUrl: string = "http://localHost:3000/wbgs";
+  baseUrl: string = "http://stark-shelf-74007.herokuapp.com//wbgs";
   deleteWineUrl: string = "http://localHost:3000/deletedwbgs";
   selectedFile: any = {
     labelImage: "",
