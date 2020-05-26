@@ -10,7 +10,7 @@ import { AdminService } from '../admin.service';
 export class RedWineComponent implements OnInit {
 
   constructor(
-    public_wine: WineService,
+    public _wine: WineService,
     public _admin: AdminService
     ) { }
 

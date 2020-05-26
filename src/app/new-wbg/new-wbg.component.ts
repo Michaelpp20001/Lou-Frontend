@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class NewWbgComponent implements OnInit {
 
   constructor(
-    public_wine: WineService,
+    public _wine: WineService,
     public _admin: AdminService,
     public _tab: TabService,
     public router: Router
