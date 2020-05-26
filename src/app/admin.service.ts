@@ -7,7 +7,7 @@ import { TabService } from './tab.service';
 export class AdminService {
 
   constructor(
-    private _tab: TabService,
+    public _tab: TabService,
   ) { }
 
   admin = "admin";

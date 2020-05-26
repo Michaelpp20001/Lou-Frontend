@@ -12,9 +12,9 @@ import { HighlightPipe } from './../highlight.pipe'
 export class SearchResultsComponent implements OnInit {
 
   constructor(
-    private _wine: WineService, 
-    private _search: SearchService,
-    private _admin: AdminService
+    public _wine: WineService, 
+    public _search: SearchService,
+    public _admin: AdminService
     ) { }
 
   ngOnInit() {

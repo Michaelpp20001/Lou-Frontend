@@ -9,7 +9,7 @@ import { AdminService } from "../admin.service";
 })
 export class WbgListComponent implements OnInit {
 
-  constructor(private _wine: WineService, private _admin: AdminService) { }
+  constructor(public _wine: WineService, public _admin: AdminService) { }
 
   ngOnInit() {
   }

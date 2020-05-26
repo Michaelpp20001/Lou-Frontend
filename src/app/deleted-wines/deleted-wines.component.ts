@@ -10,8 +10,8 @@ import { WineService } from '../wine.service';
 export class DeletedWinesComponent implements OnInit {
 
   constructor(
-    private _admin: AdminService,
-    private _wine: WineService
+    public _admin: AdminService,
+    public _wine: WineService
   ) { }
 
   ngOnInit() {

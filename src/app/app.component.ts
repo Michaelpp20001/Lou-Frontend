@@ -13,9 +13,9 @@ export class AppComponent {
   title = 'Frontend Lou & Mickeys WBG';
 
   constructor(
-    private _wine: WineService,
-    private _search: SearchService,
-    private router: Router
+    public _wine: WineService,
+    public _search: SearchService,
+    public router: Router
     ) { }
 
   ngOnInit() {

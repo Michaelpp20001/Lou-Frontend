@@ -9,7 +9,7 @@ import { WineService } from './wine.service';
 })
 export class SearchService {
 
-  constructor(private _wine: WineService, private http: HttpClient, private router: Router) { }
+  constructor(public _wine: WineService, public http: HttpClient, public router: Router) { }
 
   searchTerm: any;
   PositiveSearchTerm: any;

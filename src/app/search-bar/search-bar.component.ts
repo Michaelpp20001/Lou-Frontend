@@ -10,7 +10,7 @@ import { TabService } from '../tab.service';
 export class SearchBarComponent {
 
   constructor(
-    private _search: SearchService,
-    private _tab: TabService
+    public _search: SearchService,
+    public _tab: TabService
     ) { }
 }

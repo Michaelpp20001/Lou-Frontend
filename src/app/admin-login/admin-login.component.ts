@@ -13,9 +13,9 @@ import { Router } from '@angular/router';
 export class AdminLoginComponent implements OnInit {
 
   constructor(
-    private _admin: AdminService,
-    private router: Router,
-    private _tab: TabService
+    public _admin: AdminService,
+    public router: Router,
+    public _tab: TabService
     ) {}
 
     loginError: boolean = false

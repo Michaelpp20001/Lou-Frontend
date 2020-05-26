@@ -12,10 +12,10 @@ import { Router } from '@angular/router';
 export class NewWbgComponent implements OnInit {
 
   constructor(
-    private _wine: WineService,
-    private _admin: AdminService,
-    private _tab: TabService,
-    private router: Router
+    public_wine: WineService,
+    public _admin: AdminService,
+    public _tab: TabService,
+    public router: Router
     ) { }
 
   async onFileSelected(event) {

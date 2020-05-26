@@ -8,7 +8,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 export class LogoutModalComponent implements OnInit {
 
   constructor(
-    private el: ElementRef,
+    public el: ElementRef,
   ) { }
 
   ngOnInit() {

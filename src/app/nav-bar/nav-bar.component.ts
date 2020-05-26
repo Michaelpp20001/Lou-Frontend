@@ -12,10 +12,10 @@ import { TabService } from '../tab.service';
 export class NavBarComponent implements OnInit {
 
   constructor(
-    private _search: SearchService, 
-    private _admin: AdminService,
-    private _wine: WineService,
-    private _tab: TabService
+    public _search: SearchService, 
+    public _admin: AdminService,
+    public _wine: WineService,
+    public _tab: TabService
     ) { }
 
   tab = 1;

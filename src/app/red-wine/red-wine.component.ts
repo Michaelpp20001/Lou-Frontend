@@ -10,8 +10,8 @@ import { AdminService } from '../admin.service';
 export class RedWineComponent implements OnInit {
 
   constructor(
-    private _wine: WineService,
-    private _admin: AdminService
+    public_wine: WineService,
+    public _admin: AdminService
     ) { }
 
   ngOnInit() {

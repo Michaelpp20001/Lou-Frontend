@@ -10,10 +10,10 @@ import { TabService } from './tab.service';
 export class WineService {
 
   constructor(
-    private http: HttpClient, 
-    private router: Router,
-    private _admin: AdminService,
-    private _tab: TabService
+    public http: HttpClient, 
+    public router: Router,
+    public _admin: AdminService,
+    public _tab: TabService
     ) { }
 
   baseUrl: string = "http://localHost:3000/wbgs";
