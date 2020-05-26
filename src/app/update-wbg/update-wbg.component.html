@@ -1,0 +1,79 @@
+<div class="container">
+    <form>
+        <h1>Update {{_wine.newWine.name}}</h1>
+        <div class="properties">
+            <label for="category">Category type</label>
+            <select [(ngModel)]="this._wine.newWine.category" name="category">
+                    <option value="red">red</option>
+                    <option value="white">white</option>
+                    <option value="sparkling">sparkling</option>
+            </select>
+        </div>
+        <div class="properties">
+            <label for="name">Name</label>
+            <input [(ngModel)]="this._wine.newWine.name" id="name" name="name" type="text">
+        </div>
+        <div class="properties">
+            <label for="producer">Producer</label>
+            <input [(ngModel)]="this._wine.newWine.producer" id="producer" name="producer" type="text">
+        </div>
+        <div class="properties">
+            <label for="grape">Grape</label>
+            <input [(ngModel)]="this._wine.newWine.grape" id="grape" name="grape" type="text">
+        </div>
+        <div class="properties">
+            <label for="country">Country</label>
+            <input [(ngModel)]="this._wine.newWine.country"id="country" name="country" type="text">
+        </div>
+        <div class="properties">
+            <label for="region">Region</label>
+            <input [(ngModel)]="this._wine.newWine.region" id="region" name="region" type="text">
+        </div>
+        <div class="properties">
+            <label for="subRegion">Sub Region</label>
+            <input [(ngModel)]="this._wine.newWine.subRegion" id="subRegion" name="subRegion" type="text">
+        </div>
+        <div class="properties">
+            <label for="appearance">Appearance</label>
+            <input [(ngModel)]="this._wine.newWine.apperance" id="appearance" name="appearance" type="text">
+        </div>
+        <div class="properties">
+            <label for="nose">Nose</label>
+            <input [(ngModel)]="this._wine.newWine.nose" id="nose" name="nose" type="text">
+        </div>
+        <div class="properties">
+            <label for="palate">Palate</label>
+            <input [(ngModel)]="this._wine.newWine.palate" id="palate" name="palate" type="text">
+        </div>
+        <div class="properties">
+            <label for="abv">ABV</label>
+            <input [(ngModel)]="this._wine.newWine.abv" id="abv" name="abv" type="text">
+        </div>
+        <div class="properties">
+            <label for="wineMakingNotes">Winemaking Notes</label>
+            <textarea rows="4" [(ngModel)]="this._wine.newWine.wineMakingNotes" name="wineMakingNotes" type="text"></textarea>
+        </div>
+        <div class="properties">
+            <label for="foodPairings">Food Pairings</label>
+            <input [(ngModel)]="this._wine.newWine.foodPairings" id="foodPairings" name="foodPairings" type="text">
+        </div>
+        <div class="properties">
+            <label for="notes">Notes</label>
+            <input [(ngModel)]="this._wine.newWine.notes" id="notes" name="notes" type="text">
+        </div>
+        <div class="properties">
+            <label>Upload label image</label>
+            <input type="file" (change)="onFileSelected($event)">
+        </div>
+        <div class="properties">
+            <div class="labelImage" style="text-align: center;" *ngIf="this._wine.selectedFile.labelImage">
+                <label>Wine Label Preview</label>
+                <img src="{{this._wine.selectedFile.labelImage}}" alt="selected labelImage"><br>
+            </div>
+            <div class="btn-container">
+                <div class="confirm"><button id="confirm-btn" (click)="onUpdateWIne()">Submit New Wine</button></div>
+                <div class="cancel"><button id="cancel-btn" (click)="cancel()">Cancel</button></div>
+            </div>
+        </div>
+    </form>
+</div>

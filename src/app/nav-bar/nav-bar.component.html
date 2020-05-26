@@ -1,0 +1,89 @@
+<div class="navbar">
+      <div class="lou-logo">
+        <img src="../assets/LouandMickeysLogo2.png" alt="Lou and Mickey's logo">
+      </div>
+      <div class="search-bar">
+        <app-search-bar></app-search-bar>
+      </div>
+      <div id="nav-links">
+        <div id="link" 
+          [ngClass] = "{'active': this._tab.currentTab===1}" 
+          (click)= "this._search.clearSearch(); 
+          this._tab.currentTab=1"
+          [routerLink] = "'/wbgList'">
+            WBG
+        </div>
+        <div id="link" 
+          [ngClass] = "{'active': this._tab.currentTab===2}" 
+          (click)= "this._search.clearSearch(); 
+          this._tab.currentTab=2"
+          [routerLink] = "'/redWine'">
+            Red
+        </div>
+        <div id="link"
+          [ngClass] = "{'active': this._tab.currentTab===3}" 
+          (click)= "this._search.clearSearch(); 
+          this._tab.currentTab=3"
+          [routerLink] = "'/whiteWine'">
+            White
+        </div>
+        <div id="link" 
+          [ngClass] = "{'active': this._tab.currentTab===4}"
+          (click)="this._search.clearSearch();
+          this._tab.currentTab=4"
+          [routerLink] = "'/sparklingWine'">
+            Sparkling
+        </div>
+        <div *ngIf="!this._admin.loggedIn; else logout" 
+          id="link" 
+          [ngClass] = "{'active': this._tab.currentTab===6}"
+          (click)= "this._search.clearSearch(); 
+          this._tab.currentTab=6"
+          [routerLink] = "'/adminLogin'">
+            Admin
+          </div>
+          <ng-template #logout>
+
+          <div id="link">
+            <div class="dropdown">
+                Admin
+                <i class="fa fa-caret-down"></i>
+              <div class="dropdown-content">
+                <a
+                (click)="this._search.clearSearch(); 
+                this.clearInputs();
+                this._tab.currentTab=5"
+                [routerLink] = "'/newWBG'">
+                Add New WBG
+              </a>
+                <a
+                (click)="this._search.clearSearch();
+                this._wine.getPreviousWines();
+                this.clearInputs();
+                this._tab.currentTab=7"
+                [routerLink] = "'/previousWines'">
+                Previous WBG
+              </a>
+                <a
+                (click)="this._search.clearSearch();
+                this._admin.logout();
+                this.showDialog()"
+                [routerLink] = "'/wbgList'">
+                Logout
+              </a>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+    </div>
+</div>
+<modal id="modal_1" class="hhidden">
+  <div class="modal-content">
+    <div class="king-img">
+      <img src="../../assets/kings2.png" alt="King's Seafood logo" style="width: 100px; height: 100px">
+    </div>
+    <div class="popup-message">
+      Admin access has been logged out
+    </div>
+  </div>
+</modal>
