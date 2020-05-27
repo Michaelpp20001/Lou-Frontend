@@ -16,8 +16,8 @@ export class WineService {
     public _tab: TabService
     ) { }
 
-  baseUrl: string = "http://stark-shelf-74007.herokuapp.com/wbgs";
-  deleteWineUrl: string = "http://stark-shelf-74007.herokuapp.com/deletedwbgs";
+  baseUrl: string = "https://stark-shelf-74007.herokuapp.com/wbgs";
+  deleteWineUrl: string = "https://stark-shelf-74007.herokuapp.com/deletedwbgs";
   selectedFile: any = {
     labelImage: "",
   };
