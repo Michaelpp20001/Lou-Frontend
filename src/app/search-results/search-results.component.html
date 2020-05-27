@@ -1,4 +1,4 @@
-<div *ngIf="!this._search.searchResults" class="load-container"> 
+<div *ngIf="this._search.searchResults.length === 0" class="load-container"> 
     <h4>Loading Wines...</h4>
     <div class="loader"></div>
 </div>
