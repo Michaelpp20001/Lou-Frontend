@@ -19,6 +19,7 @@ export class SearchService {
   searchResults: any = [];
   noSearchResults: string = "";
   baseUrl: string = "https://stark-shelf-74007.herokuapp.com/wbgs";
+  filterWords: any = ["the", "a", "an", "and", ",", ":", ";"];
 
   stringToArray(str) {
     return str.replace(/([,.])/g,"").trim().split(" ");
@@ -36,6 +37,7 @@ export class SearchService {
     this.PositiveSearchResult = false;
     let myTerm = this.searchTerm.toLowerCase();
     this.searchTerm = this.stringToArray(myTerm)
+    this._wine.filterKeywords(this.searchTerm)
 
     console.log("string to array search term", this.searchTerm)
 
