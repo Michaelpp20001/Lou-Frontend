@@ -24,6 +24,10 @@ export class SearchService {
   stringToArray(str) {
     return str.replace(/([,.])/g,"").trim().split(" ");
   }
+  
+  filterKeywords(arr) {
+    this.searchTerm = arr.filter(word => !this.filterWords.includes(word))
+  }
 
   clearSearch() {
     this.noSearchResults = "";
@@ -37,7 +41,7 @@ export class SearchService {
     this.PositiveSearchResult = false;
     let myTerm = this.searchTerm.toLowerCase();
     this.searchTerm = this.stringToArray(myTerm)
-    this._wine.filterKeywords(this.searchTerm)
+    this.filterKeywords(this.searchTerm)
 
     console.log("string to array search term", this.searchTerm)
 
