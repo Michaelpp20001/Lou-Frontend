@@ -33,9 +33,7 @@ export class SearchService {
 
   searchWBG() {
     this.searchResults = [];
-    this.noSearchResults = "";
     this.PositiveSearchResult = false;
-    this.router.navigateByUrl('/searchResults')
     let myTerm = this.searchTerm.toLowerCase();
     this.searchTerm = this.stringToArray(myTerm)
 
@@ -84,6 +82,7 @@ export class SearchService {
 
             this.clearSearch()
             this.PositiveSearchResult = true
+            this.router.navigateByUrl('/searchResults')
           } else {
             this.NegativeSearchTerm = this.searchTerm.toString().replace(/,/g, ' ')
             this.noSearchResults = "No search results"
