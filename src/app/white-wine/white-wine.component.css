@@ -2,7 +2,6 @@
 .container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
 }
 
 .wine {
@@ -11,6 +10,7 @@
     justify-content: center;
     flex-wrap: wrap;
     padding: 50px;
+    height: 100%;
 }
 
 .label {
