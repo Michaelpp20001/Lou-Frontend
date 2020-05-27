@@ -41,9 +41,12 @@ export class SearchService {
     this.PositiveSearchResult = false;
     let myTerm = this.searchTerm.toLowerCase();
     this.searchTerm = this.stringToArray(myTerm)
-    this.filterKeywords(this.searchTerm)
 
     console.log("string to array search term", this.searchTerm)
+
+    this.filterKeywords(this.searchTerm)
+
+    console.log("array after filter", this.searchTerm)
 
     //filtering search term through the backend "keywords" array
     const reqs = this.searchTerm.map(term => this.http.get(`${this.baseUrl}?filter[where][keywords]=${term}`))
