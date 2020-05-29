@@ -142,8 +142,12 @@ button:hover {
     }
     .loader {
         border: 5px solid #bdc3c7;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        border-top-color: #f0f0f0;
+        border-bottom-color: #f0f0f0;
+        margin: auto;
         animation: spin 1s linear infinite;
-        width: 30px;
-        height: 30px;
     }
 }
