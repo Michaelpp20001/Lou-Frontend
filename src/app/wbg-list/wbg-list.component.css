@@ -140,4 +140,10 @@ button:hover {
     .key {
         width: 30%;
     }
+    .loader {
+        border: 5px solid #bdc3c7;
+        animation: spin 1s linear infinite;
+        width: 30px;
+        height: 30px;
+    }
 }
