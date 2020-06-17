@@ -11,6 +11,7 @@ export class SearchService {
 
   constructor(public _wine: WineService, public http: HttpClient, public router: Router) { }
 
+  searchInput: any;
   searchTerm: any;
   PositiveSearchTerm: any;
   htmlPositiveSearchTerm: any;
@@ -42,7 +43,8 @@ export class SearchService {
     delete this.noSearchResults;
     this.PositiveSearchResult = false;
     this.router.navigateByUrl('/searchResults')
-    let myTerm = this.searchTerm.toLowerCase();
+    let myTerm = this.searchInput.toLowerCase();
+    delete this.searchInput;
     this.searchTerm = this.stringToArray(myTerm)
 
     console.log("string to array search term", this.searchTerm)
