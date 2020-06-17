@@ -145,4 +145,7 @@ button:hover {
     .modal-content {
         flex-direction: column;
     }
+    .popup-message {
+        padding-bottom: 15px;
+    }
 }

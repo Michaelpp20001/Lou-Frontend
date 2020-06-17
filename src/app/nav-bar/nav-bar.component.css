@@ -31,7 +31,6 @@ img {
 
 .active, #link:hover {
     cursor: pointer;
-    transition: 0.6s ease-out;
     border-bottom: solid 2px black;
 }
 
