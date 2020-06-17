@@ -80,10 +80,20 @@
                 </div>
                 <div class="button-container">
                     <div class="update"><button id="update-btn" *ngIf="this._admin.loggedIn" (click)="this._wine.selectWine(wine)">Update</button></div>
-                    <div class="delete"><button id="delete-btn" *ngIf="this._admin.loggedIn" (click)="this._wine.deleteWine(wine)">Delete</button></div>
+                    <div class="delete"><button id="delete-btn" *ngIf="this._admin.loggedIn" (click)="this.showDialog(wine)">Delete</button></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<delete-modal id="modal_2" [wine]="wineToDelete" class="hhidden">
+    <div class="modal-content">
+      <div class="king-img">
+        <img src="./assets/kings2.png" alt="King's Seafood logo" style="width: 100px; height: 100px">
+      </div>
+      <div class="popup-message">
+        Would you lke to delete this wine?
+      </div>
+    </div>
+  </delete-modal>
 

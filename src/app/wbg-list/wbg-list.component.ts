@@ -9,7 +9,10 @@ import { AdminService } from "../admin.service";
 })
 export class WbgListComponent implements OnInit {
 
-  constructor(public _wine: WineService, public _admin: AdminService) { }
+  constructor(
+    public _wine: WineService, 
+    public _admin: AdminService
+    ) { }
 
   wineToDelete: any
 
