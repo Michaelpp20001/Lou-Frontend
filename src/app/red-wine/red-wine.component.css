@@ -130,4 +130,7 @@ button:hover {
     .key {
         width: 30%;
     }
+    .modal-content {
+        flex-direction: column;
+    }
 }

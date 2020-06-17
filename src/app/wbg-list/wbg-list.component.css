@@ -120,6 +120,22 @@ button:hover {
     background-color: #ffbfbf;
 }
 
+/*show or hide the delete popup*/
+.sshow {
+    display: block;
+}
+
+.hhidden {
+    display: none;
+}
+
+.modal-content {
+    padding: 0px 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 @media screen and (max-width: 920px) {
     .title {
         text-align: center;
@@ -149,6 +165,9 @@ button:hover {
         border-bottom-color: #f0f0f0;
         margin: auto;
         animation: spin 1s linear infinite;
+    }
+    .modal-content {
+        flex-direction: column;
     }
     @keyframes spin {
         0% {
