@@ -22,6 +22,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { LogoutModalComponent } from './logout-modal/logout-modal.component';
 import { DeletedWinesComponent } from './deleted-wines/deleted-wines.component';
 import { IonicModule } from '@ionic/angular';
+import { DeleteModalComponent } from './delete-modal/delete-modal.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { IonicModule } from '@ionic/angular';
     SearchBarComponent,
     AdminLoginComponent,
     LogoutModalComponent,
-    DeletedWinesComponent
+    DeletedWinesComponent,
+    DeleteModalComponent
   ],
   imports: [
     BrowserModule,

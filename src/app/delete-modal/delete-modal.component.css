@@ -1,0 +1,81 @@
+.mmodal {
+    z-index: 1000;
+    position: fixed;
+    top: 20%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40vw;
+    animation: popup 0.5s ease-out;
+}
+
+@keyframes popup {
+    0% {
+        transform: translateY(-300px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.mmodal-body {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.mmodal-btn {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'roboto', sans-serif;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+    border: none;
+}
+
+#btn-cancel, #btn-delete {
+    padding: 5px;
+    margin: 5px;
+}
+
+#btn-cancel:hover {
+    background-color: #f7ecab
+}
+
+#btn-delete:hover {
+    background-color: #ffbfbf
+}
+
+.mmodal-background {
+    z-index: 900;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #919191;
+    opacity: 0.50;
+}
+
+@media screen and (max-width: 900px) {
+    .mmodal {
+        width: 60vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .mmodal {
+        width: 80vw;
+    }
+}

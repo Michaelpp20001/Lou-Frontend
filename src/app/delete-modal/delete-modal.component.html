@@ -1,0 +1,10 @@
+<div class="mmodal">
+    <div class="mmodal-body">
+        <ng-content></ng-content>
+    </div>
+    <div class="mmodal-btn">
+        <button id="btn-cancel" (click)="close()">cancel</button>
+        <button id="btn-delete" (click)="close(); this._wine.deleteWine(this.wine)">delete</button>
+      </div>
+</div>
+<div class="mmodal-background"></div>
