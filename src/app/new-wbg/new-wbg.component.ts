@@ -36,7 +36,7 @@ export class NewWbgComponent implements OnInit {
   }
 
   onUploadNewWine() {
-    this._wine.winePreLoad();
+    //this._wine.winePreLoad();
     this._wine.uploadNewWine();
     this._tab.currentTab = 1;
   }

@@ -34,9 +34,9 @@ form h1 {
   }
 
 img {
-    min-height: 45vh;
-    max-width: 300px;
-    max-width: 45vw;
+    max-height: 45vh;
+    max-width: 100%;
+    width: auto;
 }
 .btn-container {
   display: flex;

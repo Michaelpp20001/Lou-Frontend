@@ -61,6 +61,7 @@ export class WineService {
     //post a new wine to the backend
     //and clear out remaining inputs in view and storage methods
     this.winePreLoad();
+    delete this.newWine.id
     this.http.post(this.baseUrl, this.newWine)
     .subscribe(response => {
 
