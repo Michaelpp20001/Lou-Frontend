@@ -1,4 +1,8 @@
-<p *ngIf="this._search.searchResults">
+<div *ngIf="!this._search.searchResults[0]" class="load-container"> 
+    <h4>Searching Wines...</h4>
+    <div class="loader"></div>
+</div>
+<p *ngIf="this._search.searchResults[0]">
     Search results matching <span>"{{this._search.htmlPositiveSearchTerm}}"</span>
 </p>
 <div *ngIf="this._search.searchResults">
