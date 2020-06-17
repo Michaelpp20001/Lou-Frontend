@@ -21,6 +21,7 @@ export class WineService {
   selectedFile: any = {
     labelImage: "",
   };
+  loader: boolean = false;
   allWbg: any;
   previousWines: any = [];
   sparklingWine: any = [];
@@ -148,6 +149,7 @@ export class WineService {
   }
 
   deleteWine(wine) {
+    this.loader = true;
     console.log(wine);
 
     this.http.delete(this.baseUrl + "/" + wine.id, wine)
@@ -167,6 +169,7 @@ export class WineService {
       sessionStorage.clear();
       this.clearWbgInputs();
       this.getPreviousWines();
+      this.loader = false;
     });
     this.router.navigateByUrl('/previousWines');
     this._tab.currentTab = 0;

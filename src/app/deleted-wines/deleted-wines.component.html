@@ -1,12 +1,10 @@
-<div *ngIf="!this._wine.previousWines" class="load-container"> 
-    <h4>Loading Wines...</h4>
-    <div class="loader"></div>
-</div>
-
 <div *ngIf="this._wine.previousWines.length === 0; else wines">
     <h4>Sorry, there are no previous wines yet!</h4>
 </div>
-
+<div *ngIf="this._wine.loader === true" class="load-container"> 
+    <h4>Loading Previous Wines...</h4>
+    <div class="loader"></div>
+</div>
 <ng-template #wines>
 
 <div>
