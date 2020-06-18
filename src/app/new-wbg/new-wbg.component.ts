@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
 })
 export class NewWbgComponent implements OnInit {
 
+  ngOnInit() {
+  }
+
   constructor(
     public _wine: WineService,
     public _admin: AdminService,
@@ -36,7 +39,6 @@ export class NewWbgComponent implements OnInit {
   }
 
   onUploadNewWine() {
-    //this._wine.winePreLoad();
     this._wine.uploadNewWine();
     this._tab.currentTab = 1;
   }
@@ -64,9 +66,6 @@ export class NewWbgComponent implements OnInit {
     }
     this.router.navigateByUrl('/wbgList');
     this._tab.currentTab = 1;
-  }
-
-  ngOnInit() {
   }
 
 }

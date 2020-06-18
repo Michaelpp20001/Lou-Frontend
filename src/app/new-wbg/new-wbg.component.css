@@ -67,6 +67,7 @@ button:hover {
 #cancel-btn:hover {
   background-color: #ffbfbf;
 }
+
 @media screen and (max-width: 600px) {
   form {
     width: 100%;
@@ -76,7 +77,6 @@ button:hover {
   .container {
     margin: 1rem .5rem;
   }
-
   h1 {
     padding-left: 10px;
     padding-right: 10px;
