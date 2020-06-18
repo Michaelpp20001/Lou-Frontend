@@ -70,8 +70,8 @@
                 <label>Wine Label Preview</label>
                 <img src="{{this._wine.selectedFile.labelImage}}" alt="selected labelImage"><br>
             </div>
-            <div *ngIf="this._wine.httpError" class="error">
-                {{this._wine.httpError}}
+            <div *ngIf="this._wine.httpUploadError" class="error">
+                {{this._wine.httpUploadError}}
             </div>
             <div class="btn-container">
                 <button id="confirm-btn" (click)="onUploadNewWine()">

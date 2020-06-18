@@ -23,7 +23,8 @@ export class WineService {
   selectedFile: any = {
     labelImage: "",
   };
-  httpError: any;
+  httpUploadError: any;
+  httpUpdateError: any;
   loader: boolean = false;
   allWbg: any;
   wineToDeleteIndefinately: any;
@@ -81,16 +82,14 @@ export class WineService {
   }
 
   uploadNewWine() {
-    //post a new wine to the backend
-    //and clear out remaining inputs in view and storage methods
-    //If there was a wine to delete from previous wines list
     this.loader = true;
+    //If this wine was a previously deleted wine, delete it from the backend now
     if(this.wineToDeleteIndefinately) {
       this.deleteIndefinitely(this.wineToDeleteIndefinately);
     }
     this.winePreLoad();
     delete this.newWine.id
-    delete this.httpError
+    delete this.httpUploadError
     this.http.post(this.baseUrl, this.newWine)
     .pipe(catchError(this.handleError))
     .subscribe(response => {
@@ -104,7 +103,7 @@ export class WineService {
       this.loader = false;
       this._tab.currentTab = 1;
     }, error => {
-      this.httpError = sessionStorage.getItem('httpError')
+      this.httpUploadError = sessionStorage.getItem('httpError')
       this.loader = false;
     });
   }
@@ -170,7 +169,9 @@ export class WineService {
   updateWine() {
     this.loader = true;
     this.winePreLoad();
+    delete this.httpUpdateError;
     this.http.put(this.baseUrl + "/" + this.newWine.id, this.newWine)
+    .pipe(catchError(this.handleError))
     .subscribe(update => {
       console.log("Update Success!");
       sessionStorage.clear();
@@ -179,6 +180,10 @@ export class WineService {
       this.router.navigateByUrl('/wbgList')
       this._tab.currentTab = 1;
       this.loader = false;
+    }, error => {
+      this.httpUpdateError = sessionStorage.getItem('httpError');
+      this.loader = false;
+
     });
   }
 

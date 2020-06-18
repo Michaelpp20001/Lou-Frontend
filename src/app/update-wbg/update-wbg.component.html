@@ -70,6 +70,9 @@
                 <label>Wine Label Preview</label>
                 <img src="{{this._wine.selectedFile.labelImage}}" alt="selected labelImage"><br>
             </div>
+            <div *ngIf="this._wine.httpUpdateError" class="error">
+                {{this._wine.httpUpdateError}}
+            </div>
             <div class="btn-container">
                 <button id="confirm-btn" (click)="onUpdateWine()">
                     <div class="btn-text">
