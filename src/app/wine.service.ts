@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AdminService } from './admin.service';
 import { TabService } from './tab.service';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +23,7 @@ export class WineService {
   selectedFile: any = {
     labelImage: "",
   };
+  httpError: any;
   loader: boolean = false;
   allWbg: any;
   wineToDeleteIndefinately: any;
@@ -50,6 +53,24 @@ export class WineService {
       keywords: [],
   };
 
+  handleError(error) {
+    if (error.error instanceof ErrorEvent) {
+      // A client-side or network error occurred. Handle it accordingly.
+      sessionStorage.setItem('httpError', error.error.message);
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong,
+      console.error(
+        `Backend returned code ${error.status}, ` +
+        `body was: ${error.error}`);
+        console.log("error", error.error.error.name)
+        sessionStorage.setItem('httpError', `Error ${error.error.error.statusCode} occcurred from server with ${error.error.error.name}`)
+    }
+    // return an observable with a user-facing error message
+    return throwError(
+      'Something bad happened; please try again later.');
+  };
+
 
   filterKeywords(arr) {
     this.keywords = arr.filter(word => !this.filterWords.includes(word))
@@ -63,13 +84,15 @@ export class WineService {
     //post a new wine to the backend
     //and clear out remaining inputs in view and storage methods
     //If there was a wine to delete from previous wines list
-    this.loader = true
+    this.loader = true;
     if(this.wineToDeleteIndefinately) {
       this.deleteIndefinitely(this.wineToDeleteIndefinately);
     }
     this.winePreLoad();
     delete this.newWine.id
+    delete this.httpError
     this.http.post(this.baseUrl, this.newWine)
+    .pipe(catchError(this.handleError))
     .subscribe(response => {
 
       console.log("New Wine", response);
@@ -80,6 +103,9 @@ export class WineService {
       this.router.navigateByUrl('/wbgList')
       this.loader = false;
       this._tab.currentTab = 1;
+    }, error => {
+      this.httpError = sessionStorage.getItem('httpError')
+      this.loader = false;
     });
   }
 
