@@ -23,6 +23,7 @@ export class WineService {
   };
   loader: boolean = false;
   allWbg: any;
+  wineToDeleteIndefinately: any;
   previousWines: any = [];
   sparklingWine: any = [];
   whiteWine: any = [];
@@ -61,6 +62,11 @@ export class WineService {
   uploadNewWine() {
     //post a new wine to the backend
     //and clear out remaining inputs in view and storage methods
+    //If there was a wine to delete from previous wines list
+    this.loader = true
+    if(this.wineToDeleteIndefinately) {
+      this.deleteIndefinitely(this.wineToDeleteIndefinately);
+    }
     this.winePreLoad();
     delete this.newWine.id
     this.http.post(this.baseUrl, this.newWine)
@@ -72,6 +78,7 @@ export class WineService {
       this.clearWbgInputs();
       this.getAllWbg();
       this.router.navigateByUrl('/wbgList')
+      this.loader = false;
       this._tab.currentTab = 1;
     });
   }
@@ -130,8 +137,7 @@ export class WineService {
 
   addBackToList(wine) {
     this.newWine = wine;
-    this.deleteIndefinitely(wine);
-    delete this.newWine.id;
+    this.wineToDeleteIndefinately = wine;
     this.router.navigateByUrl('/newWBG');
   }
 

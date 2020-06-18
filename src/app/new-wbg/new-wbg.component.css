@@ -38,13 +38,10 @@ img {
     max-width: 100%;
     width: auto;
 }
+
 .btn-container {
   display: flex;
   justify-content: flex-end;
-}
-
-.cancel, .confirm {
-  padding: 5px;
 }
 
 button {
@@ -53,6 +50,23 @@ button {
   text-decoration: none;
   font-family: 'roboto', sans-serif;
   border: none;
+  margin: 5px;
+}
+
+.btn-text {
+  display: flex;
+}
+
+/* loader in the button */
+.loader {
+  border: 2px solid #4a4a4a;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  border-top-color: #f0f0f0;
+  border-left-color: #f0f0f0;
+  margin: auto;
+  animation: spin .3s linear infinite;
 }
 
 button:hover {
