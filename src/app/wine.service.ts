@@ -215,10 +215,12 @@ export class WineService {
   }
 
   deleteIndefinitely(wine) {
+    this.loader = true;
     console.log(wine);
     this.http.delete(this.deleteWineUrl + "/" + wine.id, wine)
     .subscribe(response => {
       console.log("Successfully deleted forever")
+      this.loader = false;
       this.getPreviousWines();
     });
   }
