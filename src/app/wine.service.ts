@@ -142,6 +142,7 @@ export class WineService {
   }
 
   updateWine() {
+    this.loader = true;
     this.winePreLoad();
     this.http.put(this.baseUrl + "/" + this.newWine.id, this.newWine)
     .subscribe(update => {
@@ -151,6 +152,7 @@ export class WineService {
       this.getAllWbg();
       this.router.navigateByUrl('/wbgList')
       this._tab.currentTab = 1;
+      this.loader = false;
     });
   }
 

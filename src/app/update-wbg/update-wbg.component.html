@@ -71,8 +71,13 @@
                 <img src="{{this._wine.selectedFile.labelImage}}" alt="selected labelImage"><br>
             </div>
             <div class="btn-container">
-                <div class="confirm"><button id="confirm-btn" (click)="onUpdateWine()">Submit New Wine</button></div>
-                <div class="cancel"><button id="cancel-btn" (click)="cancel()">Cancel</button></div>
+                <button id="confirm-btn" (click)="onUpdateWine()">
+                    <div class="btn-text">
+                        <div *ngIf="this._wine.loader === true" class="loader"></div> 
+                        <div>Submit Update</div>
+                    </div>
+                </button>
+                <button id="cancel-btn" (click)="cancel()">Cancel</button>
             </div>
         </div>
     </form>
