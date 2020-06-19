@@ -2,7 +2,7 @@
     <h4>Loading Previous Wines...</h4>
     <div class="loader"></div>
 </div>
-<div *ngIf="this._wine.previousWines.length === 0; else wines">
+<div *ngIf="(this._wine.previousWines.length === 0 && this._wine.loader === false); else wines">
     <h4>Sorry, there are no previous wines yet!</h4>
 </div>
 

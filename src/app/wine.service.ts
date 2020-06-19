@@ -130,12 +130,14 @@ export class WineService {
 
   getPreviousWines() {
     //get all Wbg and store to all Wbg variable/update arrays
+    this.loader = true;
     this.http.get(this.deleteWineUrl)
     .subscribe(response => {
 
       console.log("All Previous WBG", response);
 
       this.previousWines = response;
+      this.loader = false;
     });
   }
 
