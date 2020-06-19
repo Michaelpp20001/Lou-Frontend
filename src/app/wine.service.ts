@@ -145,7 +145,9 @@ export class WineService {
     //retrieving label image base64 from session storage and 
     //setting to new wine label image for upload
     let wine = this.newWine;
-    wine.labelImage = sessionStorage.getItem("base64Image");
+    if(!this.newWine.labelImage) {
+      wine.labelImage = sessionStorage.getItem("base64Image");
+    }
     //taking all inputs from new wbg/upadate wine component and creating a keywords array
     this.keywords = `${this.keywords} ${wine.category} ${wine.name} ${wine.producer} ${wine.grape} ${wine.country} ${wine.region} ${wine.subRegion} ${wine.apperance} ${wine.nose} ${wine.palate} ${wine.abv} ${wine.wineMakingNotes} ${wine.foodPairings} ${wine.notes}`.toLowerCase()
     this.newWine.keywords = this.stringToArray(this.keywords)
