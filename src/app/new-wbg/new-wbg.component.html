@@ -72,7 +72,7 @@
             </div>
 
             <ng-template #update>
-                <div class="labelImage" style="text-align: center;">
+                <div *ngIf="this._wine.newWine.labelImage" class="labelImage" style="text-align: center;">
                     <label>Wine Label Preview</label>
                     <img src="{{this._wine.newWine.labelImage}}" alt="selected labelImage"><br>
                 </div>
